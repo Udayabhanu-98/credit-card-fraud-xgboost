@@ -27,16 +27,18 @@ def predict(data: dict):
         if model is None:
             return {"error": "Model not loaded"}
 
-        # Convert input to DataFrame
         input_df = pd.DataFrame([data])
-
-        # Prediction
         prediction = model.predict(input_df)[0]
         probability = model.predict_proba(input_df)[0][1]
+
+        # 🛠 Convert NumPy to native Python types
+        prediction = int(prediction)
+        probability = float(probability)
+
         label = "Fraud" if prediction == 1 else "Not Fraud"
 
         return {
-            "prediction": int(prediction),
+            "prediction": prediction,
             "fraud_probability": round(probability, 4),
             "result": label
         }
