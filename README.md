@@ -71,6 +71,9 @@ This project implements an end-to-end pipeline for detecting credit card fraud u
 - **Deployment**: Render (free tier)
 - **Swagger UI**: `/docs` for testing requests
 
+### [Live API] : https://credit-card-fraud-xgboost.onrender.com
+
+
 ### ✅ Sample POST Request
 
 ```json
